@@ -193,21 +193,15 @@ def prepare_price_labels(prices: pd.DataFrame) -> pd.DataFrame:
     keep_cols = [
         "ticker",
         "price_anchor_date",
-
-        # Price context known at the anchor close.
         "adj_close",
         "volume",
         "ret_1d",
         "ret_5d",
         "ret_20d",
-
-        # Raw forward returns.
         "fwd_ret_1d",
         "fwd_ret_3d",
         "fwd_ret_5d",
         "fwd_ret_20d",
-
-        # Benchmark-adjusted forward returns.
         "benchmark_fwd_ret_1d",
         "benchmark_fwd_ret_3d",
         "benchmark_fwd_ret_5d",
@@ -216,8 +210,6 @@ def prepare_price_labels(prices: pd.DataFrame) -> pd.DataFrame:
         "fwd_abnormal_ret_3d",
         "fwd_abnormal_ret_5d",
         "fwd_abnormal_ret_20d",
-
-        # Binary labels.
         "label_up_abnormal_1d",
         "label_up_abnormal_3d",
         "label_up_abnormal_5d",
