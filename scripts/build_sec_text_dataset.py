@@ -179,13 +179,7 @@ def save_outputs(text_df: pd.DataFrame) -> None:
     parquet_path.parent.mkdir(parents=True, exist_ok=True)
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     duckdb_path.parent.mkdir(parents=True, exist_ok=True)
-
-    # Full text goes into Parquet.
-    # Parquet is compact and better for large text columns.
     text_df.to_parquet(parquet_path, index=False)
-
-    # CSV only stores metadata.
-    # Do NOT store full document_text in CSV because it becomes large and hard to open.
     metadata_cols = [
         "event_id",
         "ticker",
