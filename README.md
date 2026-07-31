@@ -1,1 +1,1 @@
-# Jesus-A-Galarza-Event-Driven-Financial-NLP-and-Alpha-Research-Platform
+# Event Driven Financial NLP and Alpha Research Platform
