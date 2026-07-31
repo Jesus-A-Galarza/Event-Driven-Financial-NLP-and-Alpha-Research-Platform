@@ -241,8 +241,6 @@ def build_ml_dataset(
         how="inner",
         validate="one_to_one",
     )
-
-    # Add simple form one-hot features.
     ml["is_10k"] = (ml["form"] == "10-K").astype(int)
     ml["is_10q"] = (ml["form"] == "10-Q").astype(int)
 
@@ -315,8 +313,6 @@ def save_outputs(feature_df: pd.DataFrame, ml: pd.DataFrame) -> None:
     feature_df.to_csv(features_csv_path, index=False)
 
     ml.to_parquet(ml_parquet_path, index=False)
-
-    # CSV should not include huge text columns.
     csv_cols = [
         col for col in ml.columns
         if col not in {"document_text"}
