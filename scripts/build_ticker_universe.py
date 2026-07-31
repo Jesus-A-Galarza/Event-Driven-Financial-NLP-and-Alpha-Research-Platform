@@ -59,8 +59,6 @@ def build_tech_universe(sp500: pd.DataFrame) -> pd.DataFrame:
         sp500["sector"].isin(tech_sectors)
         | (sp500["ticker"].isin(selected_consumer_tech))
     ].copy()
-
-    #Useful to add ETF as Benchmarks.
     benchmark_rows = pd.DataFrame(
         [
             {
